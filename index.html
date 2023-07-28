@@ -17,17 +17,22 @@
 
     <!-- boxi icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Abhishek Portfolio</title>
 
 </head>
 
 <body>
 
-
-    <header class="header ">
+    <header class="header">
         <a href="index.html" class="logo">Portfolio.</a>
-
-        <nav class=" navbar bg-dark rounded">
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="navbar bg-dark rounded">
             <a href="#" style="--i:1;" class="active">Home</a>
             <a href="#about" style="--i:2;">About</a>
             <a href="#skills" style="--i:3;">Skills</a>
@@ -35,6 +40,25 @@
             <a href="index.html" style="--i:4;">Portfolio</a>
         </nav>
     </header>
+    
+    
+    
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navbar = document.querySelector('.navbar');
+        const navLinks = document.querySelectorAll('.navbar a');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Close the navbar when a navigation link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
+        });
+    </script>
 
     <!--       Home Page 🏠 -->
 

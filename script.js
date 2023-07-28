@@ -7,3 +7,24 @@ setTimeout(() => {
         loop: true
     })
 }, 4000);
+
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelectorAll('.navbar a');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
+
+// Close the navbar when a navigation link is clicked
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+    });
+});
+
+
+
+
+
+
