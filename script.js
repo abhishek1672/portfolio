@@ -19,7 +19,9 @@ hamburger.addEventListener('click', () => {
 // Close the navbar when a navigation link is clicked
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navbar.classList.remove('active');
+        if (window.innerWidth <= 767) { // Check if the screen width is smaller or equal to 767px (mobile screen)
+            navbar.classList.remove('active'); // Close the navbar on mobile screens
+        }
     });
 });
 
