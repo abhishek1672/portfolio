@@ -32,21 +32,24 @@
             <div class="line"></div>
             <div class="line"></div>
         </div>
+       
+
         <nav class="navbar bg-dark rounded">
-            <a href="#" style="--i:1;" class="active">Home</a>
-            <a href="#about" style="--i:2;">About</a>
-            <a href="#skills" style="--i:3;">Skills</a>
-            <a href="#contact" style="--i:5;">Contact</a>
-            <a href="index.html" style="--i:4;">Portfolio</a>
+            <a href="#" style="--i:1;" class="nav-link active">Home</a>
+            <a href="#about" style="--i:2;" class="nav-link">About</a>
+            <a href="#skills" style="--i:3;" class="nav-link">Skills</a>
+            <a href="#contact" style="--i:5;" class="nav-link">Contact</a>
+            <a href="index.html" style="--i:4;" class="nav-link">Portfolio</a>
         </nav>
+
     </header>
 
 
 
     <script>
-        const hamburger = document.querySelector('.hamburger');
+       const hamburger = document.querySelector('.hamburger');
         const navbar = document.querySelector('.navbar');
-        const navLinks = document.querySelectorAll('.navbar a');
+        const navLinks = document.querySelectorAll('.nav-link'); // Updated selector for nav links
 
         hamburger.addEventListener('click', () => {
             navbar.classList.toggle('active');
@@ -54,10 +57,26 @@
 
         // Close the navbar when a navigation link is clicked
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navbar.classList.remove('active');
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                const targetSection = document.querySelector(link.getAttribute('href'));
+                if (targetSection) {
+                    const topOffset = 70; // Adjust the value based on your design (height of the fixed navbar)
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition - topOffset;
+                    window.scrollBy({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    navbar.classList.remove('active'); // Close the navbar on mobile screens
+                }
             });
         });
+
+
+
+    
+
     </script>
 
     <!--       Home Page 🏠 -->
