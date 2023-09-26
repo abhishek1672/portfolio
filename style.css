@@ -430,3 +430,9 @@ body{
         right: 20px;
     }
 }
+
+/* project responsive ness for mobile */
+
+.styling{
+    margin-top: 18px;
+}
