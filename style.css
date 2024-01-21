@@ -132,14 +132,15 @@ body{
 
 .home-img img{
 
-    max-width: 300px;
+    max-width: 450px;
     margin-right: -20px;
     opacity: 0;
     top: -20px;
-    border-radius: 10%;
+    border-radius: 50%;
      animation: zoomIn .8s ease forwards,floatImage 4s ease-in-out infinite;
 
     animation-delay:2s,3s;
+    border:  3px solid #ebe9e9dd;
 
 
 }
@@ -311,7 +312,7 @@ body{
  @keyframes floatImage{
     0%{
         transform: translateY(0);
-    }
+    }   
     50%{
         transform: translateY(-24px);
     }
