@@ -1,6 +1,6 @@
 setTimeout(() => {
     var typed = new Typed(".multiple-text", {
-        strings: ["MCA Student.", "Developement Lover.", "Future Java Developer.", "Problem Solver."],
+        strings: ["MCA Student.", "MERN STACK DEVELOPER.", "Future Java Developer.", "Problem Solver."],
         typeSpeed: 100,
         backSpeed: 100,
         backDelay: 1000,

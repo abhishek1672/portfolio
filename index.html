@@ -54,23 +54,54 @@
 
 
     <script>
-       const hamburger = document.querySelector('.hamburger');
+    //    const hamburger = document.querySelector('.hamburger');
+    //     const navbar = document.querySelector('.navbar');
+    //         const navLinks = document.querySelectorAll('.navbar a'); // Updated selector for nav links
+
+    //     hamburger.addEventListener('click', () => {
+    //         navbar.classList.toggle('active');
+    //     });
+
+    //     // Close the navbar when a navigation link is clicked
+    //     navLinks.forEach(link => {
+    //             link.addEventListener('click', () => {
+    //                 // navbar.classList.remove('active');
+    //                 if (window.innerWidth <= 767) { // Check if the screen width is smaller or equal to 767px (mobile screen)
+    //                     navbar.classList.remove('active'); // Close the navbar on mobile screens
+    //                 }
+    //             });
+    //         });
+
+ 
+        const hamburger = document.querySelector('.hamburger');
         const navbar = document.querySelector('.navbar');
-            const navLinks = document.querySelectorAll('.navbar a'); // Updated selector for nav links
+        const navLinks = document.querySelectorAll('.navbar a');
 
-        hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', () => {
             navbar.classList.toggle('active');
-        });
+    });
 
-        // Close the navbar when a navigation link is clicked
-        navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navbar.classList.remove('active');
-                    if (window.innerWidth <= 767) { // Check if the screen width is smaller or equal to 767px (mobile screen)
-                        navbar.classList.remove('active'); // Close the navbar on mobile screens
+    // Close the navbar when a navigation link is clicked and navigate to the href
+    navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                navbar.classList.remove('active'); // Close the navbar
+                const target = event.target.getAttribute('href'); // Get the href attribute value
+                if (target) {
+                    // Scroll to the target if it exists
+                    const targetElement = document.querySelector(target);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Navigate to the href if no target element is found (for external links)
+                        window.location.href = target;
                     }
-                });
+                }
             });
+    });
 
 
     
@@ -126,7 +157,7 @@
                 <!-- <img src="img/quotes.jpg" style="border-radius:10px;border: solid white;" width="280px" height="300px"
                     class="box-shadow"> -->
                 <div class="AboutSection">
-                    <p>I am a passionate and driven student pursuing a MCA degree. My goal is
+                    <p>I am a passionate and driven student who has completed an MCA degree. My goal is
                         to combine my technical skills and creativity to make a positive impact in the field of
                         technology.</p>
                     <p>Throughout my academic journey, I have gained a solid foundation in computer science principles,
