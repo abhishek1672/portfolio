@@ -149,6 +149,11 @@ body{
     color: black;
 }
 
+.HandleStyle{
+
+    margin-bottom: 3px;
+}
+
 .social-media a{
 
     display:inline-flex ;
@@ -221,7 +226,8 @@ body{
     background:#1f242d;
     background:white;
     color: #1f242d;
-    box-shadow: 0 0 50px #0ef;
+    box-shadow: 0 0 50px #fff;
+    border-color: #000;
     
 }
 
